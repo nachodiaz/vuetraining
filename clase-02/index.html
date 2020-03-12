@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+
+</head>
+<body>
+    
+    <div id="app">
+        <ul>
+            <li v-for="(message, index) in messages" :class="mainClass">
+                {{index}} - {{message}}
+            </li>
+            <button @click="addNewTask">agregar tarea</button>
+        </ul>
+        <br>
+        <h1 v-if="linterna">Encendido</h1>
+        <h1 v-else>Apagado</h1>
+        <h2 v-show="showName">Hola Mi nombre es Ignacio</h2>
+        <button @click="turnOnOff">Encender/Apagar y Mostrar nombre</button>
+    </div>
+
+    <script>
+        new Vue ({
+            el : '#app',
+            data: {
+                messages : ['Estudiar Vue', 
+                            'Estudiar Js', 
+                            'Hacer ejercicio', 
+                            'Jugar a la pelotaa', 
+                            'traerme los datos al chart'
+                ],
+                mainClass : 'clasePrincipal',
+                linterna: false,
+                showName: true
+            
+            },
+            methods: {
+                addNewTask () {
+                    const message = 'blablabla'
+                    this.messages.push(message) 
+                },
+                turnOnOff () {
+                    this.linterna = !this.linterna
+                    this.changeShowStatus()
+                },
+                changeShowStatus() {
+                    this.showName = !this.showName
+                }
+            },
+            computed: {
+                isLinternaOn(){
+                    return this.linterna 
+                    ? 'La linterna esta encendida'
+                    : 'La linterna esta apaga '
+                }
+            },
+            watch: {
+                linterna(value, oldValue){
+                    console.log({value, oldValue})
+                }
+            }
+        }) 
+    </script>
+
+
+</body>
+</html>
