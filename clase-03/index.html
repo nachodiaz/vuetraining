@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+
+</head>
+<body>
+
+    <div id="app">
+        <primer-componente></primer-componente>
+        <segundo-componente></segundo-componente>
+    </div>
+
+
+    <script>
+       
+        Vue.component('primer-componente',{
+            template: '<h1>Primer Componente</h1>', 
+                      
+        })
+        Vue.component('segundo-componente',{
+            template: '<primer-componente></primer-componente>'
+        })
+        new Vue ({
+            el : '#app',
+            componente: {
+                secondComponente: 'primer-componente'
+            }
+        }) 
+    </script>
+    
+</body>
+</html>
