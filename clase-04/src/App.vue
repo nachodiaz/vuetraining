@@ -1,5 +1,14 @@
 <template>
-  <ChildComponent  :NewMessage="message"/>
+  <div>
+    <ChildComponent>
+      <h1>¿Que cerveza quieres?</h1>
+      <h3> Negra o Rubia </h3>
+    </ChildComponent>
+    <ChildComponent>
+     
+      <h3> Amber o IPA </h3>
+    </ChildComponent>
+  </div>
 </template>
 
 <script>
@@ -13,7 +22,12 @@ export default {
   },
   data() {
     return {
-      message: 'Prueba una beuan cerveza'
+      message: 'Prueba una buena cerveza'
+    }
+  }, 
+  methods:{
+    changeText (event) {
+      this.message = event ;
     }
   }
 }

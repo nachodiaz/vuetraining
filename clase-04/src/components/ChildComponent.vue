@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1>{{NewMessage}}</h1>
+        <!--<h1>{{NewMessage}}</h1>
+        <button @click="emitNewMessage">Cambiar Mensaje</button>-->
+        <h1>Hola Quetal!</h1>
+        <slot />
     </div>
 </template>
 <script>
@@ -9,9 +12,14 @@
         props: {
             NewMessage: {
                 type: String,
-                validator: value => { return value.includes('cerveza')}
+                //validator: value => { return value.includes('cerveza')}
             }
             
+        },
+        methods: {
+            emitNewMessage() {
+                this.$emit('changeMessage', 'Quiero otra Cervezota!')
+            }
         }
     }
 </script>
