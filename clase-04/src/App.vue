@@ -3,7 +3,7 @@
     <ChildComponent>
       <h1>¿Que cerveza quieres?</h1>
       <template v-slot:mainSlot="scopedSlot">
-      <h3> {{scoedSlot.mensaje}} </h3>
+      <h3> {{scopedSlot.mensaje}} </h3>
       </template>
     </ChildComponent>
     <ChildComponent>  

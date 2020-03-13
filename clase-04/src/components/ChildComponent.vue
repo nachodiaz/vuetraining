@@ -9,19 +9,13 @@
 <script>
     export default {
         name: 'ChildComponent',
-       
-        props: {
-            NewMessage: {
-                type: String,
-                //validator: value => { return value.includes('cerveza')}
-            }
-            
-        },
-        methods: {
-            emitNewMessage() {
-                this.$emit('changeMessage', 'Quiero otra Cervezota!')
-            }
+
+        data() {
+            return {
+                mensaje: 'Quieres una Cerveza Rubia'
+                }
         }
+        
     }
 </script>
 <style>
