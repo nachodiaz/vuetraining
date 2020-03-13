@@ -2,23 +2,28 @@
   <div>
     <ChildComponent>
       <h1>¿Que cerveza quieres?</h1>
-      <h3> Negra o Rubia </h3>
+      <template v-slot:mainSlot="scopedSlot">
+      <h3> {{scoedSlot.mensaje}} </h3>
+      </template>
     </ChildComponent>
-    <ChildComponent>
-     
+    <ChildComponent>  
       <h3> Amber o IPA </h3>
     </ChildComponent>
+    <BrotherComponent />
+  
   </div>
 </template>
 
 <script>
 import ChildComponent from './components/ChildComponent.vue'
+import BrotherComponent from './components/BrotherComponent.vue'
 
 export default {
   name: 'app',
  
   components: {
-    ChildComponent
+    ChildComponent,
+    BrotherComponent
   },
   data() {
     return {

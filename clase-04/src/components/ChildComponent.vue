@@ -2,13 +2,14 @@
     <div>
         <!--<h1>{{NewMessage}}</h1>
         <button @click="emitNewMessage">Cambiar Mensaje</button>-->
-        <h1>Hola Quetal!</h1>
-        <slot />
+        <h1>¿Quieres Cerveza?</h1>
+        <slot name="mainSlot" :mensaje="message"/>
     </div>
 </template>
 <script>
     export default {
         name: 'ChildComponent',
+       
         props: {
             NewMessage: {
                 type: String,
