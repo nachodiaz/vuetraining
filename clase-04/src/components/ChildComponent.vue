@@ -2,7 +2,7 @@
     <div>
         <!--<h1>{{NewMessage}}</h1>
         <button @click="emitNewMessage">Cambiar Mensaje</button>-->
-        <h1>¿Quieres Cerveza?</h1>
+        <h1>¿Quieres Cerveza?</h1>º
         <slot name="mainSlot" :mensaje="message"/>
     </div>
 </template>
@@ -15,6 +15,7 @@
                 mensaje: 'Quieres una Cerveza Rubia'
                 }
         }
+        
         
     }
 </script>
